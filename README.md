@@ -1,7 +1,7 @@
 # Data Wrangling Case Study: US Supply Chain GHG Emission Factors
 
 ## 📌 Project Overview
-This project demonstrates the end-to-end data cleaning, wrangling, and restructuring of the **US EPA Supply Chain Greenhouse Gas (GHG) Emission Factors** dataset. The project traces the process of transforming messy, unformatted, and concatenated records into a standardized, production-ready dataset.
+This project demonstrates the end-to-end data cleaning, wrangling, and restructuring of the **US EPA Supply Chain Greenhouse Gas (GHG) Emission Factors** dataset. The project traces the process of transforming messy, unformatted, and concatenated records into a standardized, production ready dataset.
 
 ---
 
@@ -9,12 +9,12 @@ This project demonstrates the end-to-end data cleaning, wrangling, and restructu
 
 ### 1. Initial State (Unsorted / Raw Sheet)
 The initial raw dataset (`Supply_chain_emission_factors_U`) presented structural inconsistencies:
-* **Tilde-Separated Strings (Rows 2–21):** All seven data attributes were merged into a single tilde-delimited string in Column A (e.g., `111CA~Farms~carbon dioxide~kg/2018 USD, purchaser price~0.467~0.046~0.513`).
+* **Tilde-Separated Strings (Rows 2–21):** All seven data attributes were merged into a single tilde delimited string in Column A (e.g., `111CA~Farms~carbon dioxide~kg/2018 USD, purchaser price~0.467~0.046~0.513`).
 * **Pipe-Separated Strings (Rows 224–235):** Commodity sectors `622` (Hospitals), `623` (Nursing facilities), and `624` (Social assistance) had four metadata fields merged into Column B using pipe (`|`) delimiters (e.g., `Hospitals|carbon dioxide|kg/2018 USD...`), leaving essential target columns empty (`NaN`).
 * **Unstructured Extra Columns:** Temporary parsing resulted in auxiliary, unaligned working columns (`Unnamed: 7` through `Unnamed: 13`).
 
 ### 2. Data Cleaning & Transformation Operations
-* **Delimited Text Splitting (`~` Delimiters):** Used text-splitting functions to separate concatenated records into distinct schema fields:
+* **Delimited Text Splitting (`~` Delimiters):** Used text splitting functions to separate concatenated records into distinct schema fields:
   - `Commodity Code`
   - `Commodity Name`
   - `Substance`
@@ -22,8 +22,8 @@ The initial raw dataset (`Supply_chain_emission_factors_U`) presented structural
   - `Supply Chain Emission Factors without Margins`
   - `Margins of Supply Chain Emission Factors`
   - `Supply Chain Emission Factors with Margins`
-* **Sub-String Extraction (`|` Delimiters):** Parsed pipe-delimited values in sector codes `622–624` to extract missing `Substance`, `Unit`, and baseline `Emission Factor` values into columns C, D, and E.
-* **Schema Realignment & Column Consolidation:** Deleted redundant temporary working columns (columns H through N) and merged all parsed records into a single 7-column matrix.
+* **Sub String Extraction (`|` Delimiters):** Parsed pipe delimited values in sector codes `622–624` to extract missing `Substance`, `Unit`, and baseline `Emission Factor` values into columns C, D, and E.
+* **Schema Realignment & Column Consolidation:** Deleted redundant temporary working columns (columns H through N) and merged all parsed records into a single 7 column matrix.
 
 ### 3. Final State (Sorted / Cleaned Sheet)
 The final sheet (`Sorted Supply_chain_emission_fa`) achieves a fully structured tabular format:
@@ -37,7 +37,7 @@ The final sheet (`Sorted Supply_chain_emission_fa`) achieves a fully structured 
 
 | Column Name | Description | Data Type | Example Value |
 | :--- | :--- | :--- | :--- |
-| **Commodity Code** | NAICS-based industry/sector code | String / Numeric | `111CA` |
+| **Commodity Code** | NAICS based industry/sector code | String / Numeric | `111CA` |
 | **Commodity Name** | Description of the commodity/sector | String | `Farms` |
 | **Substance** | Greenhouse gas category | String | `carbon dioxide` |
 | **Unit**| Standard measurement metric | String | `kg/2018 USD, purchaser price` |
