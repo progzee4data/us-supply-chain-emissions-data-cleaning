@@ -1,11 +1,11 @@
 # Data Wrangling Case Study: US Supply Chain GHG Emission Factors
 
-## 📌 Project Overview
+## Project Overview
 This project demonstrates the end-to-end data cleaning, wrangling, and restructuring of the **US EPA Supply Chain Greenhouse Gas (GHG) Emission Factors** dataset. The project traces the process of transforming messy, unformatted, and concatenated records into a standardized, production ready dataset.
 
 ---
 
-## 🔄 Data Wrangling Pipeline (From Raw to Sorted)
+## Data Wrangling Pipeline (From Raw to Sorted)
 
 ### 1. Initial State (Unsorted / Raw Sheet)
 The initial raw dataset (`Supply_chain_emission_factors_U`) presented structural inconsistencies:
@@ -33,7 +33,7 @@ The final sheet (`Sorted Supply_chain_emission_fa`) achieves a fully structured 
 
 ---
 
-## 📊 Dataset Schema Reference
+## Dataset Schema Reference
 
 | Column Name | Description | Data Type | Example Value |
 | :--- | :--- | :--- | :--- |
@@ -48,8 +48,8 @@ The final sheet (`Sorted Supply_chain_emission_fa`) achieves a fully structured 
 
 ---
 
-## 🛠️ Tools & Technologies Used
+## Tools & Technologies Used
 * **Spreadsheet Software:** Google Sheets (SPLIT, Text-to-Columns)
 
-## 📌 Background & Context
+## Background & Context
 This project was completed as part of the **ALX Africa Data Science Program** to demonstrate practical data wrangling, schema standardization, and dataset cleaning using Google Sheets.
